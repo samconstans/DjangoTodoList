@@ -1,0 +1,21 @@
+{% include 'partials/header.html' %}
+<form action="{% url 'edit' %}" method="post">
+	<label for="title">title</label><br />
+		<input type="text" name="title" id="title" required>{{todo.title}}/>
+	<br>
+	<label for="text">text</label><br />
+	<textarea name="text" id="text" required>{{todo.text}}></textarea>
+	<br><br>
+	<input type="submit" value="Save changes" class="btn btn-default"/>
+	<a class="btn btn-default" href="{url 'edit'}"><span class="glyphicon glyphicon-ok"></span></a>
+</form>
+<br>
+<div class="">
+	<a href="{% url 'index' %}" class="btn btn-default">Go Back</a>
+</div>
+{% csrf_token %}
+{% include 'partials/footer.html' %}
+
+
+
+
