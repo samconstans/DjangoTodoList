@@ -1,5 +1,5 @@
 {% include 'partials/header.html' %}
-<form action="{% url 'add' %}" method="post" class="todoapp">
+<form action="{% url 'delete' %}" method="post" class="todoapp">
 {% csrf_token %}
 	<label for="title">title</label><br />
 		<input type="text" name="title" id="title" class="form-control"/>
@@ -8,7 +8,6 @@
 	<textarea name="text" id="text" class="form-control"></textarea>
 	<br><br>
 	<input type="submit" value="Submit" class="btn btn-default"/>
-    {% csrf_token %}
 </form>
 <br>
 <div class="">

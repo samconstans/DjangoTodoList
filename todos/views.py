@@ -30,15 +30,20 @@ def add(request):
 
 
 def edit(request):
-    if request.method=='POST':
-        title = Todo.objects.get(id=id).update(title=request.POST.get('title'))
-        text = Todo.objects.get(id=id).update(text=request.POST.get('text'))
+    if (request.method == 'POST'):
+        title = request.POST['title']
+        text = request.POST['text']
         todo = Todo(title=title, text=text)
         todo.save()
-        return redirect('/todos')        
-    else:        
+        return redirect('/todos')
+    else:
         return render(request, 'edit.html')
 
+"""
 def delete(request):
-    todo = Todo.objects.get(id=id).delete()
-    return redirect('/')
+    title = Todo.objects.get(id=id).update(title=request.POST.get('title'))
+    text = Todo.objects.get(id=id).update(text=request.POST.get('text'))
+    todo = Todo(title=title, text=text)
+    todo.delete(save=True)
+    return redirect('/todos')
+"""
