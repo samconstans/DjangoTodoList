@@ -28,7 +28,7 @@ def add(request):
     else:
         return render(request, 'add.html')
 
-
+"""
 def edit(request):
     if (request.method == 'POST'):
         title = request.POST['title']
@@ -39,7 +39,7 @@ def edit(request):
     else:
         return render(request, 'edit.html')
 
-"""
+
 def delete(request):
     title = Todo.objects.get(id=id).update(title=request.POST.get('title'))
     text = Todo.objects.get(id=id).update(text=request.POST.get('text'))
